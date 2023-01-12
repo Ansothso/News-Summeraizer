@@ -14,3 +14,10 @@ submit = st.button("Klick")
 if submit:
     st.session_state["test_in"] = test_in
     st.write(test_in)
+
+newtest = st.button("Generate Text")
+if newtest:
+    f = open("Testi.txt", encoding="utf-8")
+    st.write(f.read())
+    f.close()
+    
