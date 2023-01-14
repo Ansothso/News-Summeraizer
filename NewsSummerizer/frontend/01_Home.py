@@ -1,9 +1,9 @@
 import streamlit as st
 st.set_page_config(
-    page_title="New Test"
+    page_title="News-Summarizer"
 )
 
-st.title("Main Paige")
+st.title("News-Summarizer")
 st.sidebar.success("Select a Page.")
 
 if "test_in" not in st.session_state:
