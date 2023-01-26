@@ -4,7 +4,7 @@ st.set_page_config(
 )
 
 st.title("News-Summarizer")
-st.sidebar.success("Select a Page.")
+#st.sidebar.success("Select a Page.")
 
 if "test_in" not in st.session_state:
     st.session_state["test_in"] = ""
@@ -21,3 +21,15 @@ if newtest:
     st.write(f.read())
     f.close()
     
+testatiu = st.text_area("Input your article to summarize.", height=100)
+submit2 = st.button("Klick2")
+if submit2:
+    #st.session_state["test_in"] = test_in
+    st.write(testatiu)
+
+
+st.download_button("Click to download.", testatiu)
+
+#colums hinzufügen
+#'ausklappen' und 'zuklappen' implementieren
+#Funktion für die wahl einer Zufälligen news für Top news entwerfen.
