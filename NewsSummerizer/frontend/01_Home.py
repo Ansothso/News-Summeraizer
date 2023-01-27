@@ -1,6 +1,11 @@
+from PIL import Image
 import streamlit as st
+
+im = Image.open("icon_1.ico")
+
 st.set_page_config(
-    page_title="News-Summarizer"
+    page_title="News-Summarizer",
+    page_icon=im
 )
 
 st.title("News-Summarizer")

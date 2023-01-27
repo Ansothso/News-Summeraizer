@@ -12,12 +12,14 @@ input[type=text], input[type=email], textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
+  color: #4F8BF9;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20%;
   cursor: pointer;
+  backgroud-color: #00ff00;
+  height: 3em;
+  width: 3em;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
