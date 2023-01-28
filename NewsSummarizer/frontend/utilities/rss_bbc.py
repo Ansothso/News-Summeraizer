@@ -10,7 +10,7 @@ def getText(url):
 
     #parse html and find all paragraphs in main content
     soup = bs(page.content, "html.parser")
-    results = soup.find(id="maincontent").find_all("p")
+    results = soup.find("article").find_all("p")
 
     #extract and format text from paragraphs
     articleText = ""
@@ -20,12 +20,11 @@ def getText(url):
             if content.name == None:
                 articleText += str(content) + " "
             else:
-                if content.name == "a" or content.name == "strong":
+                if content.name == "a" or content.name == "strong" or content.name == "b":
                     if len(content.contents) > 0:
                         articleText += str(content.get_text())
 
     return articleText
-
 #create a function that gets all articles from the rss feed (given the link to the rss feed)
 def getArticles(rssLink):
     #fetch all articles from rss
@@ -40,4 +39,4 @@ def getArticles(rssLink):
         article = {"title": title, "link": link, "text": text}
         results.append(article)
     return results
-#print(getArticles("https://www.theguardian.com/international/rss"))
+#print(getArticles("http://feeds.bbci.co.uk/news/rss.xml"))
