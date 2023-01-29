@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 st.title("News-Summarizer")
-st.sidebar.success("Select a Page.")
+#st.sidebar.success("Select a Page.")
 
 if "test_in" not in st.session_state:
    st.session_state["test_in"] = ""
