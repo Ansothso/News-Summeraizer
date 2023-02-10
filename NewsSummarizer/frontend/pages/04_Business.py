@@ -15,7 +15,9 @@ col1, col2 = st.columns(2)
 with col1:
     for article in odd_articles:
         with st.expander(article["title"]):
-            st.write(article["link"])
+            link = "[Original article]("+article["link"]+")"
+            st.write(link)
+            #st.write(article["link"])
             st.write(article["text"])
         
 with col2:
