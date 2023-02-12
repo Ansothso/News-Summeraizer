@@ -26,10 +26,14 @@ class NewsSite:
         results = []
 
         #save title, link, source, category and text of each article in a dictionary
-        for entry in news.entries:
+        for i in range (0,10):
+            entry = news.entries[i]
             title = entry.title
             link = entry.link
             text = self.getText(link)
+
+            ##do summary
+
             #append results to the dictionary
             article = {"title": title, "link": link, "text": text, "category": self.category, "source": self.source}
             results.append(article)
