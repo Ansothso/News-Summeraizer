@@ -11,12 +11,15 @@ class BBCsports(NewsSite):
     #define a function that extracts article text from a given url
     def getText(self, url):
         #get the html page from url
+        print(url)
         page = requests.get(url)
 
         #parse html and find all paragraphs in main content
         soup = bs(page.content, "html.parser")
-        results = soup.find(id="lx-commentary-top").find_all("p")
-
+        if "live" in url:
+            results = soup.find(id="lx-commentary-top").find_all("p")
+        else:
+            results = soup.find("article").find_all("p")
         #extract and format text from paragraphs
         articleText = ""
         for paragraph in results:
@@ -31,9 +34,4 @@ class BBCsports(NewsSite):
 
         return articleText
 
-if __name__=="__main__":
-    print("test")
-    bbc_sports = BBCsports("https://feeds.bbci.co.uk/sport/rss.xml", "sport")
-    url="https://www.bbc.com/sport/live/football/63890764"
-    text=bbc_sports.getText(url)
-    print(text)
+

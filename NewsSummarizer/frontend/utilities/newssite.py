@@ -2,6 +2,7 @@ import json
 import feedparser
 import pandas as pd
 from os.path import exists
+from utilities.summarizer import get_summary
 
 '''
 abstract class for news fetching
@@ -33,9 +34,10 @@ class NewsSite:
             text = self.getText(link)
 
             ##do summary
+            summary = get_summary(text)
 
             #append results to the dictionary
-            article = {"title": title, "link": link, "text": text, "category": self.category, "source": self.source}
+            article = {"title": title, "link": link, "text": text, "category": self.category, "source": self.source, "summary": summary}
             results.append(article)
         return results
 
@@ -69,4 +71,10 @@ class NewsSite:
             with open("cache.json", "w") as file:
                 json.dump(articles, file)
             return articles
+
+
+'''
+testing existing technologies
+update on the 9th
+'''
         
