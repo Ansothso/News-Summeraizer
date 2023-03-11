@@ -10,31 +10,15 @@ st.set_page_config(
 )
 
 st.title("Create your own Summary")
-st.write("You are able to input your own text into the textfield. By pressing the button you will generate your own summary.")
-
-if "test_in" not in st.session_state:
-   st.session_state["test_in"] = ""
-
-test_in = st.text_input("This test", st.session_state["test_in"])
-submit = st.button("Klick")
-if submit:
-    st.session_state["test_in"] = test_in
-    st.write(test_in)
-
-newtest = st.button("Generate Text")
-if newtest:
-    f = open("Testi.txt", encoding="utf-8")
-    st.write(f.read())
-    f.close()
+st.write('You can input your own text into the textfield. By clicking the "Generate" button, a summary will be generated. This summary can also be downloaded as a .txt file.')
     
 wiedtest = ""
-testatiu = st.text_area("Input your article to summarize.", height=100)
-submit2 = st.button("Klick2")
+testatiu = st.text_area("Input your article to summarize.", height=300)
+submit2 = st.button("Generate")
 if submit2:
     tee2 = testatiu.replace('\n', ' ')
     wiedtest = get_summary(tee2)
     #st.session_state["test_in"] = test_in
     st.write(wiedtest)
 
-
-st.download_button("Click to download.", wiedtest)
+st.download_button("Click to download", wiedtest)
