@@ -1,7 +1,15 @@
 import streamlit as st
 from utilities.summarizer import get_summary
+from PIL import Image
 
-st.title("Creat your own Summary")
+im = Image.open("icon_1.ico")
+
+st.set_page_config(
+    page_title="Summary",
+    page_icon=im
+)
+
+st.title("Create your own Summary")
 st.write("You are able to input your own text into the textfield. By pressing the button you will generate your own summary.")
 
 if "test_in" not in st.session_state:
