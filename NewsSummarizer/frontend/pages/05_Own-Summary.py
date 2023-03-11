@@ -1,4 +1,5 @@
 import streamlit as st
+from utilities.summarizer import get_summary
 
 st.title("Creat your own Summary")
 st.write("You are able to input your own text into the textfield. By pressing the button you will generate your own summary.")
@@ -18,11 +19,14 @@ if newtest:
     st.write(f.read())
     f.close()
     
+wiedtest = ""
 testatiu = st.text_area("Input your article to summarize.", height=100)
 submit2 = st.button("Klick2")
 if submit2:
+    tee2 = testatiu.replace('\n', ' ')
+    wiedtest = get_summary(tee2)
     #st.session_state["test_in"] = test_in
-    st.write(testatiu)
+    st.write(wiedtest)
 
 
-st.download_button("Click to download.", testatiu)
+st.download_button("Click to download.", wiedtest)

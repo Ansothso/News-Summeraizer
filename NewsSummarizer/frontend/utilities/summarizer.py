@@ -7,6 +7,8 @@ nlp = spacy.load("en_core_web_sm")
 
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = API_KEY
+
 
 def text_to_chunks(text):
   chunks = [[]]
