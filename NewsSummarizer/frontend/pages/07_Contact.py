@@ -37,7 +37,7 @@ local_css("pages\style.css")
 
 st.header("Address")
 
-st.write("""News-Summarizer Team \n
+st.write("""News Summarizer Team \n
 Robert-Mayer-Str. 11-15,
 60325 Frankfurt am Main
 """)
