@@ -1,9 +1,16 @@
 import streamlit as st
+from PIL import Image
 
 from os import remove
 from utilities.bbc import BBC
 from utilities.theguardian import TheGuardian
 
+im = Image.open("icon_1.ico")
+
+st.set_page_config(
+    page_title="Business",
+    page_icon=im
+)
 
 category = "business"
 
@@ -12,7 +19,11 @@ articles_guardian = theguardian_sports.getArticles()
 even_articles = [articles_guardian[i] for i in range(10) if i%2 == 0]
 odd_articles = [articles_guardian[i] for i in range(10) if i%2 != 0]
 
+image = Image.open('images/banner_business.png')
 st.title("Business News")
+st.image(image)
+st.caption("Image by [Vlada Karpovich](https://www.pexels.com/de-de/foto/stadt-kunst-wahrzeichen-strasse-4451721/)")
+
 st.write("Latest Business News from The Guardian")
 
 refresh = st.button("Refresh")
@@ -28,14 +39,14 @@ with col1:
         with st.expander(article["title"]):
             link = "[Original article]("+article["link"]+")"
             st.write(link)
-            st.write(article["text"])
+            st.write(article["summary"])
         
 with col2:
     for article in even_articles:
         with st.expander(article["title"]):
             link = "[Original article]("+article["link"]+")"
             st.write(link)
-            st.write(article["text"])
+            st.write(article["summary"])
 
 
 st.write("Latest Business News from the BBC")
@@ -55,12 +66,12 @@ with col1:
         with st.expander(article["title"]):
             link = "[Original article]("+article["link"]+")"
             st.write(link)
-            st.write(article["text"])
+            st.write(article["summary"])
         
 with col2:
     for article in even_articles:
         with st.expander(article["title"]):
             link = "[Original article]("+article["link"]+")"
             st.write(link)
-            st.write(article["text"])
+            st.write(article["summary"])
 
