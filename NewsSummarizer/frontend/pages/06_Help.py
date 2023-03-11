@@ -1,6 +1,13 @@
 import streamlit as st
 from PIL import Image
 
+im = Image.open("icon_1.ico")
+
+st.set_page_config(
+    page_title="Help",
+    page_icon=im
+)
+
 st.title("Help")
 
 
