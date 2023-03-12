@@ -3,10 +3,12 @@ import openai
 import spacy
 from spacy.lang.en import English
 
+API_KEY = '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'
+
 nlp = spacy.load("en_core_web_sm")
 
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = API_KEY
 
 def text_to_chunks(text):
   chunks = [[]]
