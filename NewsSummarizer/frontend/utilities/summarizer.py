@@ -19,7 +19,7 @@ def text_to_chunks(text):
   for sentence in sentences.sents:
     chunk_total_words += len(sentence.text.split(" "))
 
-    if chunk_total_words > 2700:
+    if chunk_total_words > 1500:
       chunks.append([])
       chunk_total_words = len(sentence.text.split(" "))
 
@@ -28,7 +28,7 @@ def text_to_chunks(text):
   return chunks
 
 def summarize(text):
-    prompt = f"Summarize the following text in 1 sentence:\n{text}"
+    prompt = f"Summarize this in one sentence:\n\n{text}"
 
     response = openai.Completion.create(
         model="text-davinci-003",

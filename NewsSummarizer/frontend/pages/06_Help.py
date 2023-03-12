@@ -1,55 +1,58 @@
 import streamlit as st
 from PIL import Image
 
+im = Image.open("icon_1.ico")
+
+st.set_page_config(
+    page_title="Help",
+    page_icon=im
+)
+
 st.title("Help")
+st.write("This page consists of a [user manual](#user-manual) and [FAQ](#faq).")
 
+st.header("User Manual")
+st.write("The user manual gives an overview of the pages, as well as explains the functionalities of the website.")
 
-st.header("First Steps")
+st.subheader("Pages Overview")
 
-
-st.subheader("Navigation")
-
-st.write("For navigation and exploring our website, you can use the sidebar on the left. There are eight pages you can visit:")
+st.write("For navigating and exploring the website, you can use the sidebar on the left. There are seven pages you can visit:")
 st.write("1. Home")
-st.write("This our homepage, where you can get a brief overlook of our website.")
-st.write("2. Top-News")
-st.write("In this page you can read the most important news-articles briefly.")
-st.write("3. Sports")
-st.write("This page provides all important summarized sportsnews of the day.")
-st.write("4. Politics")
-st.write("This page provides all important summarized news about (inter-)national politics of the day.")
-st.write("5. Business")
-st.write("This page provides all important summarized news about business and economics of the day.")
-st.write("6. Own Summary")
-st.write("Here you can you our intelligent summarizer-machine for summarizing news-texts you want.")
-st.write("7. Help")
-st.write("The pages, where you are currently, provides instructions for using our website comfortably.")
-st.write("8. Contact")
-st.write("This page contains all of our contact information and a contact form.")
+st.write("This the homepage, where you can get a brief overview of the whole website. Moreover, you can read different summaries listed as top news.")
+st.write("2. Sports")
+st.write("This page provides the summaries of the latest sport news.")
+st.write("3. Politics")
+st.write("This page provides the summaries of the latest political news.")
+st.write("4. Business")
+st.write("This page provides the summaries of the latest business news.")
+st.write("5. Summary Generator")
+st.write("This page generates a summary of an input text.")
+st.write("6. Help")
+st.write("This page provides an overview of all the functions of the website.")
+st.write("7. Contact")
+st.write("This page contains contact information and a contact form.")
 
 
-st.subheader("News-Articles")
+st.subheader("News Articles")
 
-st.write("The categories Top-News, Sports, Politics and Business contain the most important and viral news-articles of the day. The news-articles are selected from reliable sources such as BBC and The Guardian and are already summarized by our transformer.")
-st.write("If you open one of this pages or categories, you are going to see boxes with headline of each article. To read them, you have to go to the box/headline and click on it. The box opens up and then you are able to read the article.")
+st.write('''The categories "Sports", "Politics" and "Business" contain the most important news articles of the day. The news articles are selected from reliable sources, such as BBC and The Guardian, and are already summarized. \n 
+On these pages, you can see different boxes with article headlines in them, as displayed in Figure 1. To read them, click on the box or headline. The box expands to show the summarized article and also provides a link, which takes you to the original article, as displayed in Figure 2.''')
 
 col1, col2 = st.columns(2)
 image1 = Image.open('newsarticle-box0.png')
 image2 = Image.open('newsarticle-box1.png')
 
 with col1:
-    st.image(image1, 'Before')
+    st.image(image1, 'Figure 1: Collapsed boxes')
 with col2:
-    st.image(image2, 'After')
+    st.image(image2, 'Figure 2: Expanded boxes')
 
-st.subheader("Own Summary")
-st.write("Using the Summarizer for your interesting news-articles, go to the sidebar and open 'Own Summary'. Copy the text of the article, paste in into the text-box below the text-line 'Input your article to summarize' and press 'Klick2'-button. It might take a little time to summarize your text depending on the size of it. However, the summary pops up below the buttons.")
-st.write("Nevertheless, if you don't want to copy the whole summary, you can export it into a .txt-file by pressing the 'Click to download'-button.")
+st.subheader("Summary Generator")
+st.write('''To generate a summary for an article of choice, you can go the summary generator page. There you can paste the text of the article in the input field and click the "Generate" button. The summary will appear below the "Generate" button. The generated text can be downloaded as a .txt file by clicking the "Download" button.''')
 
 
 st.header("FAQ")
-st.write("FAQs and their answers are going to be published as soon as possibe.")
+st.write("FAQs and their answers will be published soon.")
 
 
-st.header("Further Questions and Help")
-st.write("For further questions about the website, our intelligent machine or us, you can reach us via the Contact page. Fill the form and submit it to us.")
+st.write("For comments, complaints, suggestions, or further questions, you can reach us via the [Contact](/Contact) page. Fill in the form and send it to us.")
