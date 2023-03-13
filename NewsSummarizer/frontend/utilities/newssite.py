@@ -21,7 +21,7 @@ class NewsSite:
         pass
 
     # gets all articles from the rss feed (given the link to the rss feed)
-    def getArticlesFromSource(self):
+    def getArticlesFromSource(self, summarize=True):
         #fetch all articles from rss
         news = feedparser.parse(self.rss)
         results = []
@@ -34,21 +34,24 @@ class NewsSite:
             text = self.getText(link)
 
             ##do summary
-            summary = get_summary(text)
+    
+            if summarize:
+                summary = get_summary(text)
+            else:
+                summary = "placeholder summary for testing"
 
-            #append results to the dictionary
             article = {"title": title, "link": link, "text": text, "category": self.category, "source": self.source, "summary": summary}
             results.append(article)
         return results
 
-    # still under construction...
-    def refresh(self):
-        articles = self.getArticlesFromSource()
+    # delete old cache and get new ones.
+    def refresh(self, summarize=True):
+        articles = self.getArticlesFromSource(summarize)
         with open("cache.json", "w") as file:
             json.dump(articles, file)
 
     # get article from cache if available, else get from source.
-    def getArticles(self):
+    def getArticles(self, summarize=True):
         if exists("cache.json"):
             saved_articles = json.load(open("cache.json"))
             
@@ -59,7 +62,7 @@ class NewsSite:
             if len(res) != 0:
                 return res
             else: 
-                articles = self.getArticlesFromSource()
+                articles = self.getArticlesFromSource(summarize)
                 
                 saved_articles = saved_articles + articles
                 with open("cache.json", "w") as file:
@@ -67,7 +70,7 @@ class NewsSite:
                 return articles
         
         else:
-            articles =  self.getArticlesFromSource()
+            articles =  self.getArticlesFromSource(summarize)
             with open("cache.json", "w") as file:
                 json.dump(articles, file)
             return articles
