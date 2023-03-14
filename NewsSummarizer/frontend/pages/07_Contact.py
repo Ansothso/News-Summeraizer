@@ -34,10 +34,18 @@ def local_css(file_name):
 
 local_css("pages\style.css")
 
-
 st.header("Address")
 
-st.write("""News Summarizer Team \n
+col1, col2 = st.columns(2)
+image1 = Image.open('images/map.png')
+
+with col1:
+    st.write("""News Summarizer Team \n
 Robert-Mayer-Str. 11-15,
 60325 Frankfurt am Main
 """)
+with col2:
+    st.image(image1, 'Figure 2: Location')
+
+
+

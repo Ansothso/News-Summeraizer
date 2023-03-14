@@ -39,8 +39,8 @@ st.write('''The categories "Sports", "Politics" and "Business" contain the most 
 On these pages, you can see different boxes with article headlines in them, as displayed in Figure 1. To read them, click on the box or headline. The box expands to show the summarized article and also provides a link, which takes you to the original article, as displayed in Figure 2.''')
 
 col1, col2 = st.columns(2)
-image1 = Image.open('images/newsarticle-box0.png')
-image2 = Image.open('images/newsarticle-box1.png')
+image1 = Image.open('images/newsarticle-box1.jpg')
+image2 = Image.open('images/newsarticle-box0.jpg')
 
 with col1:
     st.image(image1, 'Figure 1: Collapsed boxes')
