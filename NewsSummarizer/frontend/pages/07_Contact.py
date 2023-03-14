@@ -1,4 +1,12 @@
 import streamlit as st
+from PIL import Image
+
+im = Image.open("icon_1.ico")
+
+st.set_page_config(
+    page_title="Contact",
+    page_icon=im
+)
 
 st.title("Contact")
 st.write("Information about the creators.")
@@ -9,7 +17,7 @@ st.header("Contact Form")
 contact = """
 <form action="https://formsubmit.co/news-summarizer@proton.me" method="POST">
      <input type="hidden" name="_captcha" value="false">
-     <input type="text" name="name" placeholder="Your name" required>
+     <input type="text" name="name" placeholder="Your Name" required>
      <input type="email" name="email" placeholder="Your E-Mail" required>
      <textarea name="message" placeholder="Your Message"></textarea>
      <button type="submit">Send</button>
@@ -27,9 +35,9 @@ def local_css(file_name):
 local_css("pages\style.css")
 
 
-st.header("Adress")
+st.header("Address")
 
-st.write("""News-Summarizer Team \n
+st.write("""News Summarizer Team \n
 Robert-Mayer-Str. 11-15,
 60325 Frankfurt am Main
 """)

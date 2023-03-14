@@ -11,7 +11,6 @@ class BBCsports(NewsSite):
     #define a function that extracts article text from a given url
     def getText(self, url):
         #get the html page from url
-        print(url)
         page = requests.get(url)
 
         #parse html and find all paragraphs in main content
@@ -20,15 +19,15 @@ class BBCsports(NewsSite):
             results = soup.find(id="lx-commentary-top").find_all("p")
         else:
             results = soup.find("article").find_all("p")
+        
         #extract and format text from paragraphs
         articleText = ""
         for paragraph in results:
             for content in paragraph.contents:
-                #print(content.name)
                 if content.name == None:
-                    articleText += str(content) + " "
+                    articleText += str(content.get_text()) + " "
                 else:
-                    if content.name == "a" or content.name == "strong" or content.name == "b":
+                    if content.name == "a" or content.name == "strong" or content.name == "b" or content.name == "span" or content.name == 'em':
                         if len(content.contents) > 0:
                             articleText += str(content.get_text())
 
