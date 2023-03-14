@@ -43,9 +43,9 @@ image1 = Image.open('images/newsarticle-box1.jpg')
 image2 = Image.open('images/newsarticle-box0.jpg')
 
 with col1:
-    st.image(image1, 'Figure 1: Collapsed boxes')
+    st.image(image1, 'Collapsed boxes')
 with col2:
-    st.image(image2, 'Figure 2: Expanded boxes')
+    st.image(image2, 'Expanded boxes')
 
 st.subheader("Summary Generator")
 st.write('''To generate a summary for an article of choice, you can go the summary generator page. There you can paste the text of the article in the input field and click the "Generate" button. The summary will appear below the "Generate" button. The generated text can be downloaded as a .txt file by clicking the "Download" button.''')
