@@ -12,7 +12,7 @@ Before Running the Application, make sure that all following components are avai
 * Spacy
 * feedparser
 * pandas
-<br>
+
 ## JSON
 
 ## CSS
