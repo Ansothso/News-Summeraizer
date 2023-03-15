@@ -1,9 +1,9 @@
 # News-Summarizer
 
-Before Running the Application, make sure that all following components are available and installed.
+Before Running the Application, make sure that all following components are available and installed. <br>
 
-##Python
-###Libraries and Frameworks
+## Python<br>
+### Libraries and Frameworks
 
 * Streamlit
 * Beautifulsoup
@@ -12,7 +12,7 @@ Before Running the Application, make sure that all following components are avai
 * Spacy
 * feedparser
 * pandas
+<br>
+## JSON
 
-##JSON
-
-##CSS
+## CSS
