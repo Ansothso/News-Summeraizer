@@ -13,4 +13,5 @@ Before Running the Application, make sure that all following components are avai
 * feedparser
 * pandas
 
+The link for the usability test: https://forms.gle/kuNmMMMCnLoKixCB6
 
