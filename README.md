@@ -19,7 +19,7 @@ The unit test for this project was done using `PyTest`. Coverage was measured us
 
 The results of the coverage test can be found in `src\htmlcov` as an interactive HTML file.
 
-The questionaire for the usability test can be found [here]([https://forms.gle/kuNmMMMCnLoKixCB6](https://forms.gle/kuNmMMMCnLoKixCB6))
+The questionaire for the usability test can be found [here](https://forms.gle/kuNmMMMCnLoKixCB6).
 
 ## Dependencies
 The following are used in this project:
