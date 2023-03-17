@@ -3,6 +3,7 @@ from PIL import Image
 import json
 from os.path import exists
 import random
+from utilities.theguardian import TheGuardian
 
 image = Image.open('images/banner_topnews.png')
 st.title("Home")
@@ -19,7 +20,18 @@ You can create your own summary. In the summary generation page, you can insert 
 if exists("cache.json"):
     saved_articles = json.load(open("cache.json"))
     samples = random.sample(range(0, len(saved_articles)), 4)
-   
+
+else: 
+    category = "politics"
+    theguardian_sports = TheGuardian("https://www.theguardian.com/politics/rss",category)
+    articles_guardian = theguardian_sports.getArticles()
+    
+    category = "business"
+    theguardian_sports = TheGuardian("https://www.theguardian.com/uk/business/rss",category)
+    articles_guardian = theguardian_sports.getArticles()
+    
+    saved_articles = json.load(open("cache.json"))
+    samples = random.sample(range(0, len(saved_articles)), 4)
 
 even_articles = [samples[1], samples[3]]
 odd_articles = [samples[0],samples[2]]
