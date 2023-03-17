@@ -11,11 +11,11 @@ Our source code for this project can be found in the `src` folder. All other doc
 As summaries are generated using OpenAI's API, a working API key is needed. This should be saved as an environment variable with the name `OPENAI_API_KEY`.
 
 To start the application, move into the `src` folder and run
-> `streamlit run 01_Home.py`
+> streamlit run 01_Home.py
 
 ## Testing
 The unit test for this project was done using `PyTest`. Coverage was measured using the `coverage` library. To run the test, move into the `src` folder and run
-> `coverage run -m pytest`
+> coverage run -m pytest
 
 The results of the coverage test can be found in `src\htmlcov` as an interactive HTML file.
 
