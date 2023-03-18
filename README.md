@@ -8,7 +8,7 @@ Our source code for this project can be found in the `src` folder. All other doc
 
 ## Running the App
 
-As summaries are generated using OpenAI's API, a working API key is needed. This should be saved as an environment variable with the name `OPENAI_API_KEY`.
+As summaries are generated using OpenAI's API, a working API key is needed. This should be saved as an environment variable with the name `OPENAI_API_KEY`. [This page](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety) explains how to do this.
 
 To start the application, move into the `src` folder and run
 > streamlit run 01_Home.py
